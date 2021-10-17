@@ -84,4 +84,11 @@ public class StringCalculatorShould {
 		assertThat(StringCalculator.Add("//[*]\n1**2**3"), is(6));
 	}
 
+	@SuppressWarnings("deprecation")
+	@Test
+	public void acceptsMultipleDelimiters() {
+		assertThat(StringCalculator.Add("//[-][;]\n1-2;3"), is(6));
+		assertThat(StringCalculator.Add("//[--][...]\n2--3...4"), is(9));
+	}
+
 }
